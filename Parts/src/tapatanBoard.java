@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+
+/* The game of tapatan */
 public class tapatanBoard {
 	
 	/* 
@@ -110,8 +112,13 @@ public class tapatanBoard {
 	
 	
 	// Returns the win state of the game
-	public int getWin(){
+	public int checkWin(){
 		return win;
+	}
+	
+	// Returns which player's turn it is
+	public boolean getTurn(){
+		return turn;
 	}
 	
 	// Create winMap
