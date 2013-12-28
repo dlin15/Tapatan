@@ -4,69 +4,88 @@ import java.util.HashSet;
 import java.util.List;
 public class tapatanBoard {
 	
-	// 0 1 2
-	// 3 4 5
-	// 6 7 8
+	/* 
+	*  0 1 2
+	*  3 4 5
+	*  6 7 8 
+	*/
 	int[] board;
 	
 	// true is player 1
 	// false is player 2
 	boolean turn;
 	
-	// Maps from location to all adjacent locations
+	// A map from each postion to its adjacent positions
 	private HashMap<Integer,int[]> adjacentPositions;
 	
-	// Set of combinations that represents winning positions
-	private HashSet<Integer> winningSets;
+	// A set of values that represents winning position sums
+	private HashSet<Integer> winValues;
 	
-	// 1  2   4
-	// 8  16  32
-	// 64 128 256
+	/*
+	*  1  2   4
+	*  8  16  32
+	*  64 128 256
+	*/
 	private HashMap<Integer, Integer> winMap;
 	
 	// Position sums for each player
 	private int p1,p2;
 	
+	// Win state of the game
+	// 0 --> no win
+	// 1 --> player 1 won
+	// 2 --> player 2 won
+	private int win;
 	
+	// Initialize values
 	public tapatanBoard(){
 		turn = true;
 		board = new int[9];
 		p1 = 0;
 		p2 = 0;
 		adjacentPositionSetUp();
-		winningSetsSetUp();
+		winValueSetUp();
 		winMapSetUp();
+		win = 0;
 	}
 	
 	// Moves the current player's piece from the given source to destination positions.
 	// Assumed destination must be valid because of adjacent positions
-	// Param: source postision, destination location
-	public void move(int source, int destination){
-		board[source] = 0;
+	// Param: source postision, destination position
+	public void move(int src, int dest){
+		// Remove the piece from the source postition
+		board[src] = 0;
 		if(turn){
-			p1 -= winMap.get(source);
+			p1 -= winMap.get(src);
 		}else{
-			p2 -= winMap.get(source);
+			p2 -= winMap.get(src);
 		}
-		place(destination);
+		// Place the piece in the destination location
+		place(dest);
 	}
 	
 	// Places the current player's piece on the board at the given position.
-	// Param: destination location
-	public void place(int destination){
+	// Param: destination postision
+	public void place(int dest){
 		// Player 1's turn
 		if(turn){
-			p1 += winMap.get(destination);
-			board[destination] = 1;
-			if(winningSets.contains(p1)){
-				//player one wins
+			// add winMap value at destination postision to Player 2's position sum
+			p1 += winMap.get(dest);
+			// Places player 2's piece in destination postision
+			board[dest] = 1;
+			// Check for win
+			if(winValues.contains(p1)){
+				win = 1; //player one wins
 			}
 		// Player 2's turn
 		}else{
-			p2 += winMap.get(destination);
-			board[destination] = 2;
-			if(winningSets.contains(p2)){
-				//player two wins
+			// add winMap value at destination postision to Player 2's position sum
+			p2 += winMap.get(dest);
+			// Places player 2's piece in destination postision
+			board[dest] = 2;
+			// Check for win
+			if(winValues.contains(p2)){
+				win = 2; //player two wins
 			}
 		}
 		// Switch players
@@ -89,6 +108,12 @@ public class tapatanBoard {
 		return valid;
 	}
 	
+	
+	// Returns the win state of the game
+	public int getWin(){
+		return win;
+	}
+	
 	// Create winMap
 	private void winMapSetUp(){
 		winMap = new HashMap<Integer,Integer>();
@@ -105,16 +130,16 @@ public class tapatanBoard {
 	
 	// Create winningSets
 	// winningSets represents the values where a player wins
-	private void winningSetsSetUp(){
-		winningSets = new HashSet<Integer>();
-		winningSets.add(7);
-		winningSets.add(56);
-		winningSets.add(73);
-		winningSets.add(84);
-		winningSets.add(146);
-		winningSets.add(273);
-		winningSets.add(292);
-		winningSets.add(448);
+	private void winValueSetUp(){
+		winValues = new HashSet<Integer>();
+		winValues.add(7);
+		winValues.add(56);
+		winValues.add(73);
+		winValues.add(84);
+		winValues.add(146);
+		winValues.add(273);
+		winValues.add(292);
+		winValues.add(448);
 	}
 	
 	// Create the set of adjacent postions
