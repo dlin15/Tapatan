@@ -1,31 +1,32 @@
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 public class tapatanBoard {
 	
-	//0 1 2
-	//3 4 5
-	//6 7 8
+	// 0 1 2
+	// 3 4 5
+	// 6 7 8
 	int[] board;
 	
-	//true is player 1
-	//false is player 2
+	// true is player 1
+	// false is player 2
 	boolean turn;
 	
-	//Maps from location to all adjacent locations
+	// Maps from location to all adjacent locations
 	private HashMap<Integer,int[]> adjacentPositions;
 	
-	//Set of combinations that represents winning
+	// Set of combinations that represents winning positions
 	private HashSet<Integer> winningSets;
 	
-	//1  2   4
-	//8  16  32
-	//64 128 256
+	// 1  2   4
+	// 8  16  32
+	// 64 128 256
 	private HashMap<Integer, Integer> winMap;
 	
+	// Position sums for each player
 	private int p1,p2;
+	
 	
 	public tapatanBoard(){
 		turn = true;
@@ -37,8 +38,10 @@ public class tapatanBoard {
 		winMapSetUp();
 	}
 	
-	//Assumed destination must be valid because of adjacent Positions
-	public void move(int source,int destination){
+	// Moves the current player's piece from the given source to destination positions.
+	// Assumed destination must be valid because of adjacent positions
+	// Param: source postision, destination location
+	public void move(int source, int destination){
 		board[source] = 0;
 		if(turn){
 			p1 -= winMap.get(source);
@@ -48,13 +51,17 @@ public class tapatanBoard {
 		place(destination);
 	}
 	
+	// Places the current player's piece on the board at the given position.
+	// Param: destination location
 	public void place(int destination){
+		// Player 1's turn
 		if(turn){
 			p1 += winMap.get(destination);
 			board[destination] = 1;
 			if(winningSets.contains(p1)){
 				//player one wins
 			}
+		// Player 2's turn
 		}else{
 			p2 += winMap.get(destination);
 			board[destination] = 2;
@@ -62,13 +69,19 @@ public class tapatanBoard {
 				//player two wins
 			}
 		}
+		// Switch players
 		turn = !turn;
 	}
 	
+	// Lists the adjecent positions to the current position
+	// Param: postion on the board
+	// Return: List of adjacent positions on the board
 	public List<Integer> adjacentPositions(int position){
 		int[] adjacent = adjacentPositions.get(position);
+		// create list
 		List<Integer> valid = new ArrayList<Integer>();
 		for(int i:adjacent){
+			// only add empty postions
 			if(board[i] == 0){
 				valid.add(i);
 			}
@@ -76,7 +89,7 @@ public class tapatanBoard {
 		return valid;
 	}
 	
-	
+	// Create winMap
 	private void winMapSetUp(){
 		winMap = new HashMap<Integer,Integer>();
 		winMap.put(0,1);
@@ -90,6 +103,8 @@ public class tapatanBoard {
 		winMap.put(8,256);
 	}
 	
+	// Create winningSets
+	// winningSets represents the values where a player wins
 	private void winningSetsSetUp(){
 		winningSets = new HashSet<Integer>();
 		winningSets.add(7);
@@ -102,6 +117,7 @@ public class tapatanBoard {
 		winningSets.add(448);
 	}
 	
+	// Create the set of adjacent postions
 	private void adjacentPositionSetUp(){
 		adjacentPositions = new HashMap<Integer, int[]>();
 		adjacentPositions.put(0, new int[]{1,3,4});
