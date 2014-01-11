@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/GridLayout1"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:columnCount="1"
-    android:orientation="vertical" >
+    android:columnCount="3"
+    android:orientation="vertical"
+    android:rowCount="2" >
 
-    <ScrollView
-        android:id="@+id/scrollView1"
-        android:layout_width="99dp"
-        android:layout_height="172dp"
-        android:layout_column="0"
-        android:layout_gravity="left|top"
-        android:layout_row="0" >
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:ems="10"
+        android:text="@string/p2" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-        </LinearLayout>
-    </ScrollView>
+        <requestFocus />
+    </TextView>
 
-</GridLayout>
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:rotation="180"
+        android:text="@string/p1" />
+
+</RelativeLayout>
