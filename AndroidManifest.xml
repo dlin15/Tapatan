@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="18" />
+        android:targetSdkVersion="19" />
 
     <application
         android:allowBackup="true"
@@ -22,6 +22,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+	    <activity
+	        android:name="tapatan.a.DisplayGame"
+	        android:label="@string/game_new"
+	        android:parentActivityName="tapatan.a.MainActivity" >
+	        <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+    	        android:value="tapatan.a.MainActivity" />
+    	</activity>
+
+       	<activity
+	        android:name="tapatan.a.DisplaySettings"
+	        android:label="@string/game_settings"
+	        android:parentActivityName="tapatan.a.MainActivity" >
+	        <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+    	        android:value="tapatan.a.MainActivity" />
+    	</activity> 
     </application>
 
 </manifest>

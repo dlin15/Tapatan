@@ -1,7 +1,5 @@
 package tapatan.a;
 
-
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -24,7 +22,12 @@ public class MainActivity extends Activity {
         return true;
     }
     
+    public void startSettings(View view){
+        setContentView(R.layout.activity_settings);
+    }
+    
     public void startGame(View view){
-        setContentView(R.layout.activity_board);
+    	Intent intent = new Intent(this, DisplayGame.class);
+        startActivity(intent);
     }
 }
