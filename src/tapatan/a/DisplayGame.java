@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.app.Activity;
 
 
@@ -14,8 +16,14 @@ public class DisplayGame extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
-    }
-    
+        
+        final Button button = (Button) findViewById(R.id.button1);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	button.setBackgroundResource(R.drawable.movable_button);
+            }
+        });
+    }   
     
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
