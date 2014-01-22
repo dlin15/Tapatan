@@ -29,6 +29,7 @@
                 android:layout_height="120dp"
                 android:layout_weight="1"
                 android:background="@drawable/dropped_button"
+                android:onClick="onClick"
                 android:text="Button" />
 
             <Button
@@ -36,7 +37,8 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_background"
+                android:background="@drawable/dropped_button"
+                android:onClick="onClick"
                 android:text="Button" />
 
             <Button
@@ -44,7 +46,8 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_background"
+                android:background="@drawable/dropped_button"
+                android:onClick="onClick"
                 android:text="Button" />
         </TableRow>
 
@@ -58,7 +61,8 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_background"
+                android:background="@drawable/dropped_button"
+                android:onClick="onClick"
                 android:text="Button" />
 
             <Button
@@ -66,7 +70,8 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_background"
+                android:background="@drawable/dropped_button"
+                android:onClick="onClick"
                 android:text="Button" />
 
             <Button
@@ -74,7 +79,8 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_background"
+                android:background="@drawable/dropped_button"
+                android:onClick="onClick"
                 android:text="Button" />
         </TableRow>
 
@@ -88,7 +94,8 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_background"
+                android:background="@drawable/dropped_button"
+                android:onClick="onClick"
                 android:text="Button" />
 
             <Button
@@ -96,7 +103,8 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_background"
+                android:background="@drawable/dropped_button"
+                android:onClick="onClick"
                 android:text="Button" />
 
             <Button
@@ -104,7 +112,8 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_background"
+                android:background="@drawable/dropped_button"
+                android:onClick="onClick"
                 android:text="Button" />
         </TableRow>
     </TableLayout>

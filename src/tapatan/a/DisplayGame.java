@@ -16,14 +16,11 @@ public class DisplayGame extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
-        
-        final Button button = (Button) findViewById(R.id.button1);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	button.setBackgroundResource(R.drawable.movable_button);
-            }
-        });
     }   
+    
+    public void onClick(View v) {
+    	v.setBackgroundResource(R.drawable.movable_button);
+    }
     
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
