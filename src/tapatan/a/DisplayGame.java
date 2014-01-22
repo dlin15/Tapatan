@@ -9,7 +9,7 @@ import android.app.Activity;
 
 
 public class DisplayGame extends Activity{
-	
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,5 +26,4 @@ public class DisplayGame extends Activity{
         }
         return super.onOptionsItemSelected(item);
     }
-
 }
