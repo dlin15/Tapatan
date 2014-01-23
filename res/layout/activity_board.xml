@@ -3,6 +3,7 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingTop="15dp"
     android:orientation="vertical" 
     android:clickable="true">
 
@@ -16,8 +17,9 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="370dp" 
-        android:paddingBottom="10dp">
+        android:layout_height="390dp" 
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
 
         <TableRow
             android:id="@+id/tableRow1"
