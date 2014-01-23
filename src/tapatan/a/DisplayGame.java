@@ -11,15 +11,26 @@ import android.app.Activity;
 
 
 public class DisplayGame extends Activity{
-
+	boolean p1 = true;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
     }   
-    
+
+    // The dropping pieces round of game
     public void onClick(View v) {
-    	v.setBackgroundResource(R.drawable.movable_button);
+    	// Player one's turn to drop piece
+    	if (p1 && v.getTag() == null) {
+    		v.setBackgroundResource(R.drawable.movable_player1);
+    		v.setTag("player1"); // Gives button a tag to show this piece belong's to player 1
+    		p1 = !p1;
+    	} else if (!p1 && v.getTag() == null) { // Player two's turn to drop piece
+    		v.setBackgroundResource(R.drawable.movable_player2);
+    		v.setTag("player2"); // Gives button a tag to show this piece belong's to player 2
+    		p1 = !p1;
+    	}    	
     }
     
     @Override
