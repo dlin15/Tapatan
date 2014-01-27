@@ -40,17 +40,17 @@
 
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
-                android:tag="1" />
+                android:tag="0" />
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_weight="1"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="50dp"
 
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
-                android:tag="2" />
+                android:tag="1" />
 
             <Button
                 android:id="@+id/button3"
@@ -60,7 +60,7 @@
 
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
-                android:tag="3" />
+                android:tag="2" />
         </TableRow>
 
         <TableRow
@@ -78,27 +78,25 @@
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
                 android:paddingRight="50dp"
-                android:tag="4&apos;" />
+                android:tag="3;" />
 
             <Button
                 android:id="@+id/button5"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_marginRight="50dp"
->>>>>>> 17358924613599d0d48cdf1f6f3494124fa1ef42
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
-                android:tag="5" />
+                android:tag="4" />
 
             <Button
                 android:id="@+id/button6"
 
                 android:layout_width="50dp"
                 android:layout_height="60dp"
->>>>>>> 17358924613599d0d48cdf1f6f3494124fa1ef42
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
-                android:tag="6" />
+                android:tag="5" />
         </TableRow>
 
         <TableRow
@@ -113,10 +111,9 @@
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_marginRight="50dp"
->>>>>>> 17358924613599d0d48cdf1f6f3494124fa1ef42
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
-                android:tag="7" />
+                android:tag="6" />
 
             <Button
                 android:id="@+id/button8"
@@ -124,20 +121,18 @@
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_marginRight="50dp"
->>>>>>> 17358924613599d0d48cdf1f6f3494124fa1ef42
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
-                android:tag="8" />
+                android:tag="7" />
 
             <Button
                 android:id="@+id/button9"
 
                 android:layout_width="50dp"
                 android:layout_height="60dp"
->>>>>>> 17358924613599d0d48cdf1f6f3494124fa1ef42
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
-                android:tag="9" />
+                android:tag="8" />
         </TableRow>
     </TableLayout>
 

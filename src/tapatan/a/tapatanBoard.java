@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
+
 /* The game of tapatan */
 public class tapatanBoard {
 	
