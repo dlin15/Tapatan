@@ -39,12 +39,12 @@
                 android:layout_marginRight="50dp"
 
                 android:background="@null"
-                android:clickable="true"
                 android:onClick="onClick"
                 android:tag="0" />
 
             <Button
                 android:id="@+id/button2"
+
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_marginRight="50dp"
@@ -72,11 +72,9 @@
 
             <Button
                 android:id="@+id/button4"
-
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_marginRight="50dp"
-                
                 android:background="@null"
                 android:onClick="onClick"
                 android:paddingRight="50dp"
@@ -87,17 +85,14 @@
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_marginRight="50dp"
-                
                 android:background="@null"
                 android:onClick="onClick"
                 android:tag="4" />
 
             <Button
                 android:id="@+id/button6"
-
                 android:layout_width="50dp"
                 android:layout_height="60dp"
-                
                 android:background="@null"
                 android:onClick="onClick"
                 android:tag="5" />

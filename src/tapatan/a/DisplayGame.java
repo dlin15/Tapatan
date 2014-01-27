@@ -9,7 +9,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.FragmentManager;
+import android.content.DialogInterface;
 
 
 public class DisplayGame extends Activity{
@@ -55,40 +61,50 @@ public void onClick(View v){
 	checkWin();
 }
 
+
 private void checkWin(){
 	int check = board.checkWin();
+	int player;
+
+	if(board.turn){
+		player = 1;
+	}else{
+		player = 2;
+	}
+
 	if(check == 0){
 		return;
-	} else if(check == 1){
-		//get player 1 wins to print
-	} else{
-		//get player 2 wins to print
-	}
+	} else{ 
+		winDialog winScreen = new winDialog(player);
+	    FragmentManager fragmentManager = getFragmentManager();
+		winScreen.show(fragmentManager,"tag");
+	}		
 }
-/*
-    // The dropping pieces round of game
-    public void onClick(View v) {
-    	// Player one's turn to drop piece
-    	if (p1 && v.getTag() == null) {
-    		v.setBackgroundResource(R.drawable.movable_player1);
-    		v.setTag("player1"); // Gives button a tag to show this piece belong's to player 1
-    		p1 = !p1;
-    		
-    		// Highlight player 2's turn
-    		player1Text.setBackgroundResource(R.color.white);
-    		player2Text.setBackgroundResource(R.color.lightRed);
-    		
-    	} else if (!p1 && v.getTag() == null) { // Player two's turn to drop piece
-    		v.setBackgroundResource(R.drawable.movable_player2);
-    		v.setTag("player2"); // Gives button a tag to show this piece belong's to player 2
-    		p1 = !p1;
-    		
-    		// Highlight player 1's turn
-    		player1Text.setBackgroundResource(R.color.lightBlue);
-    		player2Text.setBackgroundResource(R.color.white);
-    	}    	
-    }
- */   
+
+@SuppressLint("ValidFragment")
+public class winDialog extends DialogFragment{
+	private int winner;
+
+	public winDialog(int winner){
+		this.winner = winner;
+	}
+	public Dialog onCreateDialog(Bundle savedInstanceState){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(R.string.winner1 + winner + R.string.winner2 ).setPositiveButton("OK",
+        		new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int id) {
+            	
+            }
+        
+        });
+
+		return builder.create();
+
+	}
+	
+	
+}
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
