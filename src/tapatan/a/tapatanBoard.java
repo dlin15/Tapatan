@@ -76,10 +76,10 @@ public class tapatanBoard {
 	
 	// Places the current player's piece on the board at the given position.
 	// Param: destination postision
-	public void place(int dest){
+	public boolean place(int dest){
 
 		if(!validPlace(dest)){
-			return;
+			return false;
 		}
 
 		// Player 1's turn
@@ -105,6 +105,7 @@ public class tapatanBoard {
 		}
 		// Switch players
 		turn = !turn;
+		return true;
 	}
 	
 	// Lists the adjecent positions to the current position

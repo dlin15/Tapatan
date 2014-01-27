@@ -17,9 +17,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TableLayout
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:background="@drawable/tapatan_board"
+        android:layout_width="300dp"
+        android:layout_height="380dp"
         android:paddingBottom="10dp"
         android:paddingTop="10dp" >
 
@@ -32,29 +31,28 @@
                 android:id="@+id/button1"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_weight="0"
+                android:layout_weight="1"
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
-                android:tag= "1" />
+                android:tag="1" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_weight="0"
+                android:layout_weight="1"
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
-                android:tag = "2" />
-
+                android:tag="2" />
 
             <Button
                 android:id="@+id/button3"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_weight="0"
+                android:layout_weight="1"
                 android:background="@drawable/dropped_button"
-                android:onClick="onClick" 
-                android:tag = "3"/>
+                android:onClick="onClick"
+                android:tag="3" />
         </TableRow>
 
         <TableRow
@@ -66,28 +64,28 @@
                 android:id="@+id/button4"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_weight="0"
+                android:layout_weight="1"
                 android:background="@drawable/dropped_button"
-                android:onClick="onClick" 
-                android:tag = "4'"/>
+                android:onClick="onClick"
+                android:tag="4;" />
 
             <Button
                 android:id="@+id/button5"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_weight="0"
+                android:layout_weight="1"
                 android:background="@drawable/dropped_button"
-                android:onClick="onClick" 
-                android:tag = "5"/>
+                android:onClick="onClick"
+                android:tag="5" />
 
             <Button
                 android:id="@+id/button6"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_weight="0"
+                android:layout_weight="1"
                 android:background="@drawable/dropped_button"
-                android:onClick="onClick" 
-                android:tag = "6"/>
+                android:onClick="onClick"
+                android:tag="6" />
         </TableRow>
 
         <TableRow
@@ -99,29 +97,28 @@
                 android:id="@+id/button7"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_weight="0"
+                android:layout_weight="1"
                 android:background="@drawable/dropped_button"
-                android:onClick="onClick" 
-                android:tag = "7"/>
+                android:onClick="onClick"
+                android:tag="7" />
 
             <Button
                 android:id="@+id/button8"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_weight="0"
+                android:layout_weight="1"
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
-                android:tag = "8" />
-
+                android:tag="8" />
 
             <Button
                 android:id="@+id/button9"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
-                android:layout_weight="0"
+                android:layout_weight="1"
                 android:background="@drawable/dropped_button"
-                android:onClick="onClick" 
-                android:tag = "9"/>
+                android:onClick="onClick"
+                android:tag="9" />
         </TableRow>
     </TableLayout>
 
