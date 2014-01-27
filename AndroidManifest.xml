@@ -30,11 +30,11 @@
 	        <meta-data
 	            android:name="android.support.PARENT_ACTIVITY"
     	        android:value="tapatan.a.MainActivity" />
-    	</activity>
+    	</activity>"AndroidManifest.xml"
 
        	<activity
 	        android:name="tapatan.a.DisplayInstructions"
-	        android:label="@string/game_settings"
+	        android:label="@string/game_instructions"
 	        android:parentActivityName="tapatan.a.MainActivity" >
 	        <meta-data
 	            android:name="android.support.PARENT_ACTIVITY"

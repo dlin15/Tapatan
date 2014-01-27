@@ -36,6 +36,7 @@ public void onClick(View v){
 		// Player one's turn to drop piece
 		if (!board.getTurn()) { // End of player 1's turn
 			v.setBackgroundResource(R.drawable.movable_player1);
+			v.setVisibility(v.VISIBLE);
 			
 			// Highlight player 2's turn
 			player1Text.setBackgroundResource(R.color.white);
@@ -43,6 +44,7 @@ public void onClick(View v){
 			
 		} else { // End of player 2's turn
 			v.setBackgroundResource(R.drawable.movable_player2);
+			v.setVisibility(v.VISIBLE);
 			
 			// Highlight player 1's turn
 			player1Text.setBackgroundResource(R.color.lightBlue);
