@@ -3,6 +3,7 @@ package tapatan.a;
 
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,22 +13,40 @@ import android.app.Activity;
 
 
 public class DisplayGame extends Activity{
-	boolean p1 = true;
-	TextView player1Text;
-    TextView player2Text;
-	
+	//boolean p1 = true;
+	//TextView player1Text;
+    //TextView player2Text;
+    private tapatanBoard board;	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
-        player1Text = (TextView)findViewById(R.id.textView1);
-        player2Text = (TextView)findViewById(R.id.textView2);
+        board = new tapatanBoard();
+//        player1Text = (TextView)findViewById(R.id.textView1);
+ //       player2Text = (TextView)findViewById(R.id.textView2);
         
         // Initialize turn color
-		player1Text.setBackgroundResource(R.color.lightBlue);
-		player2Text.setBackgroundResource(R.color.white);
+//		player1Text.setBackgroundResource(R.color.lightBlue);
+//		player2Text.setBackgroundResource(R.color.white);
     }   
 
+public void onClick(View v){
+	int position = Integer.parseInt(v.getTag().toString());
+	board.place(position);
+	checkWin();
+}
+
+private void checkWin(){
+	int check = board.checkWin();
+	if(check == 0){
+		return;
+	} else if(check == 1){
+		//get player 1 wins to print
+	} else{
+		//get player 2 wins to print
+	}
+}
+/*
     // The dropping pieces round of game
     public void onClick(View v) {
     	// Player one's turn to drop piece
@@ -50,7 +69,7 @@ public class DisplayGame extends Activity{
     		player2Text.setBackgroundResource(R.color.white);
     	}    	
     }
-    
+ */   
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
