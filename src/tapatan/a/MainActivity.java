@@ -13,7 +13,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println("Hii");
     }
 
 
@@ -25,7 +24,7 @@ public class MainActivity extends Activity {
     }
     
     public void startSettings(View view){
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_instructions);
     }
     
     public void startGame(View view){

@@ -20,6 +20,7 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_gravity="center"
+        android:layout_marginTop="50dp"
         android:background="@drawable/tapatan_board"
         android:paddingBottom="10dp" >
 
@@ -127,9 +128,10 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
-        android:text="@string/p2"
         android:paddingBottom="10dp"
+        android:text="@string/p2"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </LinearLayout>
