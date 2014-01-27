@@ -17,10 +17,14 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TableLayout
-        android:layout_width="300dp"
-        android:layout_height="380dp"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp" >
+
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/tapatan_board"
+        android:paddingBottom="10dp" >
+>>>>>>> 17358924613599d0d48cdf1f6f3494124fa1ef42
 
         <TableRow
             android:id="@+id/tableRow1"
@@ -29,9 +33,11 @@
 
             <Button
                 android:id="@+id/button1"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_weight="1"
+
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="50dp"
+
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
                 android:tag="1" />
@@ -41,15 +47,17 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_weight="1"
+
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
                 android:tag="2" />
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_weight="1"
+
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
                 android:tag="3" />
@@ -58,31 +66,36 @@
         <TableRow
             android:id="@+id/tableRow2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:paddingTop="30dp" >
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_weight="1"
+
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="50dp"
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
-                android:tag="4;" />
+                android:paddingRight="50dp"
+                android:tag="4&apos;" />
 
             <Button
                 android:id="@+id/button5"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_weight="1"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="50dp"
+>>>>>>> 17358924613599d0d48cdf1f6f3494124fa1ef42
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
                 android:tag="5" />
 
             <Button
                 android:id="@+id/button6"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_weight="1"
+
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+>>>>>>> 17358924613599d0d48cdf1f6f3494124fa1ef42
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
                 android:tag="6" />
@@ -91,31 +104,37 @@
         <TableRow
             android:id="@+id/tableRow3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:paddingTop="50dp" >
 
             <Button
                 android:id="@+id/button7"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_weight="1"
+
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="50dp"
+>>>>>>> 17358924613599d0d48cdf1f6f3494124fa1ef42
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
                 android:tag="7" />
 
             <Button
                 android:id="@+id/button8"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_weight="1"
+
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="50dp"
+>>>>>>> 17358924613599d0d48cdf1f6f3494124fa1ef42
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
                 android:tag="8" />
 
             <Button
                 android:id="@+id/button9"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_weight="1"
+
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+>>>>>>> 17358924613599d0d48cdf1f6f3494124fa1ef42
                 android:background="@drawable/dropped_button"
                 android:onClick="onClick"
                 android:tag="9" />
@@ -126,9 +145,10 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
-        android:text="@string/p2"
         android:paddingBottom="10dp"
+        android:text="@string/p2"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </LinearLayout>

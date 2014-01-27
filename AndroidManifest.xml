@@ -33,7 +33,7 @@
     	</activity>
 
        	<activity
-	        android:name="tapatan.a.DisplaySettings"
+	        android:name="tapatan.a.DisplayInstructions"
 	        android:label="@string/game_settings"
 	        android:parentActivityName="tapatan.a.MainActivity" >
 	        <meta-data

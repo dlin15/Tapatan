@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
-public class DisplaySettings extends Activity{
+public class DisplayInstructions extends Activity{
 
 	 @Override
 	    protected void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
-	        setContentView(R.layout.activity_settings);
+	        setContentView(R.layout.activity_instructions);
 	    }
 	    
 	    
