@@ -28,20 +28,10 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/button2"
-        android:layout_marginTop="20dp"
-        android:text="@string/game_instructions" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button3"
-        android:layout_alignRight="@+id/button3"
         android:layout_below="@+id/button1"
-        android:layout_marginTop="22dp"
-        android:onClick="startSettings"
-        android:text="@string/game_settings" />
+        android:layout_marginTop="20dp"
+        android:onClick="startInstructions"
+        android:text="@string/game_instructions" />
 
     <Button
         android:id="@+id/button1"

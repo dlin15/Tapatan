@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -16,17 +17,21 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.FragmentManager;
 import android.content.DialogInterface;
+import android.content.Intent;
 
 
 public class DisplayGame extends Activity{
 	//boolean p1 = true;
-	TextView player1Text;
-    TextView player2Text;
+	private TextView player1Text;
+    private TextView player2Text;
     private tapatanBoard board;	
+    private int turn;
+    private int move1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
+
         board = new tapatanBoard();
         player1Text = (TextView)findViewById(R.id.textView1);
         player2Text = (TextView)findViewById(R.id.textView2);
@@ -34,11 +39,14 @@ public class DisplayGame extends Activity{
         // Initialize turn color
 		player1Text.setBackgroundResource(R.color.lightBlue);
 		player2Text.setBackgroundResource(R.color.white);
+		
+		turn = 0;
+		move1 = -1;
     }   
 
 public void onClick(View v){
 	int position = Integer.parseInt(v.getTag().toString());
-	if (board.place(position)) {	
+	if (board.place(position) && turn <= 5) {	
 		// Player one's turn to drop piece
 		if (!board.getTurn()) { // End of player 1's turn
 			v.setBackgroundResource(R.drawable.movable_player1);
@@ -56,6 +64,17 @@ public void onClick(View v){
 			player1Text.setBackgroundResource(R.color.lightBlue);
 			player2Text.setBackgroundResource(R.color.white);
 		} 
+		turn++;
+	} 
+	else{
+		if(move1 == -1){
+			move1 = position;
+			return;
+		}
+		
+		if(move1 != -1 && board.place(position)){
+			board.move(move1, position);
+		}
 	}
 	
 	checkWin();
@@ -64,46 +83,15 @@ public void onClick(View v){
 
 private void checkWin(){
 	int check = board.checkWin();
-	int player;
-
-	if(board.turn){
-		player = 1;
-	}else{
-		player = 2;
-	}
 
 	if(check == 0){
 		return;
 	} else{ 
-		winDialog winScreen = new winDialog(player);
-	    FragmentManager fragmentManager = getFragmentManager();
-		winScreen.show(fragmentManager,"tag");
+		Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
 	}		
 }
 
-@SuppressLint("ValidFragment")
-public class winDialog extends DialogFragment{
-	private int winner;
-
-	public winDialog(int winner){
-		this.winner = winner;
-	}
-	public Dialog onCreateDialog(Bundle savedInstanceState){
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage(R.string.winner1 + winner + R.string.winner2 ).setPositiveButton("OK",
-        		new DialogInterface.OnClickListener(){
-            public void onClick(DialogInterface dialog, int id) {
-            	
-            }
-        
-        });
-
-		return builder.create();
-
-	}
-	
-	
-}
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -23,8 +23,9 @@ public class MainActivity extends Activity {
         return true;
     }
     
-    public void startSettings(View view){
-        setContentView(R.layout.activity_instructions);
+    public void startInstructions(View view){
+    	Intent intent = new Intent(this, DisplayInstructions.class);
+        startActivity(intent);
     }
     
     public void startGame(View view){

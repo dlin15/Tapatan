@@ -3,6 +3,7 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/white"
     android:clickable="true"
     android:gravity="center_vertical"
     android:orientation="vertical"
@@ -91,11 +92,13 @@
 
             <Button
                 android:id="@+id/button6"
+                style="dr"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:background="@null"
                 android:onClick="onClick"
                 android:tag="5" />
+
         </TableRow>
 
         <TableRow
