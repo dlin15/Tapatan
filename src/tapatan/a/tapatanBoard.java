@@ -56,18 +56,58 @@ public class tapatanBoard {
 	// Moves the current player's piece from the given source to destination positions.
 	// Assumed destination must be valid because of adjacent positions
 	// Param: source postision, destination position
-	public void move(int src, int dest){
+	public boolean move(int src, int dest){
 		// Remove the piece from the source postition
-		board[src] = 0;
-		if(turn){
-			p1 -= winMap.get(src);
-		}else{
-			p2 -= winMap.get(src);
+		System.out.println("we enter move");
+		if(!validMove(src,dest)){
+			return false;
 		}
-		// Place the piece in the destination location
-		place(dest);
+		if(place(dest)){
+			System.out.println("We are moving");
+			board[src] = 0;
+			if(turn){
+				p1 -= winMap.get(src);
+			}else{
+				p2 -= winMap.get(src);
+			}
+			return true;
+		}
+
+		return false;
 	}
 
+	private  boolean arrayContains(int[] arr, int position){
+		for(int i = 0; i < arr.length; i++){
+			if(arr[i] == position){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean ownership(int position){
+		int player;
+		if(turn){
+			player = 1;
+		}else{
+			player = 2;
+		}
+
+		if(board[position] == player){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	private boolean validMove(int src, int dest){
+		if(board[dest] == 0 && arrayContains(adjacentPositions.get(src),dest) && ownership(src)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 	public boolean validPlace(int position){
 		if(board[position] == 0){
 			return true;
@@ -78,7 +118,7 @@ public class tapatanBoard {
 	// Places the current player's piece on the board at the given position.
 	// Param: destination postision
 	public boolean place(int dest){
-
+		System.out.println("we are placing here!!!! "+ dest);
 		if(!validPlace(dest)){
 			return false;
 		}

@@ -26,7 +26,8 @@ public class DisplayGame extends Activity{
     private TextView player2Text;
     private tapatanBoard board;	
     private int turn;
-    private int move1;
+    private int firstClick;
+    private static View lastClick;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,12 +42,13 @@ public class DisplayGame extends Activity{
 		player2Text.setBackgroundResource(R.color.white);
 		
 		turn = 0;
-		move1 = -1;
+		firstClick = -1;
+		lastClick = null;
     }   
 
 public void onClick(View v){
 	int position = Integer.parseInt(v.getTag().toString());
-	if (board.place(position) && turn <= 5) {	
+	if (turn <= 5 && board.place(position)) {	
 		// Player one's turn to drop piece
 		if (!board.getTurn()) { // End of player 1's turn
 			v.setBackgroundResource(R.drawable.movable_player1);
@@ -67,13 +69,29 @@ public void onClick(View v){
 		turn++;
 	} 
 	else{
-		if(move1 == -1){
-			move1 = position;
+		if(board.ownership(position)){
+			firstClick = position;
+			lastClick = v;
 			return;
 		}
 		
-		if(move1 != -1 && board.place(position)){
-			board.move(move1, position);
+			System.out.println(firstClick +" " + position);
+		if(board.move(firstClick, position) && firstClick != -1){
+			System.out.println("Your printing wrong!");
+			lastClick.setVisibility(lastClick.INVISIBLE);
+			if(!board.getTurn()){	
+				v.setBackgroundResource(R.drawable.movable_player1);
+				player1Text.setBackgroundResource(R.color.white);
+				player2Text.setBackgroundResource(R.color.lightRed);
+			}else{
+				v.setBackgroundResource(R.drawable.movable_player2);
+				player1Text.setBackgroundResource(R.color.lightBlue);
+				player2Text.setBackgroundResource(R.color.white);
+			}
+			v.setVisibility(v.VISIBLE);
+		}else{
+			firstClick = -1;
+			return;
 		}
 	}
 	
