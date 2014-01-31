@@ -1,6 +1,6 @@
 Tapatan
 =======
 TODO:
-Add graphics when moving
+Replace drawable with Android graphics
 Create proper win screen
-Make Circular buttons
+Debug move
